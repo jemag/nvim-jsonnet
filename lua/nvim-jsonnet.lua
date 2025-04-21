@@ -62,7 +62,6 @@ M.setup = function(options)
                 vim.keymap.set('n', '<leader>j', '<cmd>JsonnetEval<cr>')
                 vim.keymap.set('n', '<leader>k', '<cmd>JsonnetEvalString<cr>')
                 vim.keymap.set('n', '<leader>l', '<esc>:<\',\'>!jsonnetfmt -<cr>')
-                vim.opt_local.foldlevelstart = 1
             end,
         })
 
