@@ -9,8 +9,8 @@ end
 local function getBuffer(name, filetype, opts)
     local bufnr = vim.fn.bufnr(name)
     if bufnr == -1 then
-        bufnr = vim.fn.bufadd(name)
-        vim.fn.win_execute(vim.fn.win_getid(1), string.format('%s sbuffer %d', opts.mods, bufnr))
+        vim.cmd("vnew")
+        bufnr = vim.api.nvim_get_current_buf()
         vim.api.nvim_buf_set_option(bufnr, 'buflisted', false)
         vim.api.nvim_buf_set_option(bufnr, 'buftype', 'nofile')
         vim.api.nvim_buf_set_option(bufnr, 'bufhidden', 'wipe')
